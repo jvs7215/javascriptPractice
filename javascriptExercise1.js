@@ -1,23 +1,48 @@
-window.addEventListener('DOMContentLoaded',init,false);
-            
-function init() {
-    alert('The page loaded!');
-}
+ /*DOMContentLoaded waits for all the contents connected with the HTML page to load. functions always end in "false"*/
 
-window.addEventListener('DOMContentLoaded',init,false);
+// change text with a click
+window.addEventListener('DOMContentLoaded', () => {
+  const textPara = document.getElementById("changeText");
+  const textButton = document.getElementById("changeTextButton");
+  const bgButton = document.getElementById("bgButton");
 
-function init() {
-    alert ('Check if page loaded');
+  // text button
+  textButton.addEventListener("click", () => {
+    textPara.textContent = "Cashews come from a fruit!";
+  });
 
-   var buttons = document.getElementsByTagName("button")
-buttons[0].addEventListener('click', changeColor,false)
-}
+  // cycle background through the rainbow
+  let colorIndex = 0;
+  const colors = ["red", "orange", "yellow", "green", "skyblue", "indigo", "violet"];
 
-function changeColor() {
-alert('The page loaded!')}
-/* here, style is a *property*: the CSS styling of an element: you can add a CSS property after invoking style. */
+  bgButton.addEventListener("click", () => {
+    switch (colorIndex) {
+      case 0:
+        document.body.style.backgroundColor = colors[0];
+        break;
+      case 1:
+        document.body.style.backgroundColor = colors[1];
+        break;
+      case 2:
+        document.body.style.backgroundColor = colors[2];
+        break;
+      case 3:
+        document.body.style.backgroundColor = colors[3];
+        break;
+      case 4:
+        document.body.style.backgroundColor = colors[4];
+        break;
+      case 5:
+        document.body.style.backgroundColor = colors[5];
+        break;
+      case 6:
+        document.body.style.backgroundColor = colors[6];
+        break;
+      default:
+        document.body.style.backgroundColor = colors[0];
+        break;
+    }
 
-function newFunction() { 
-/* We haven't written what is supposed to happen here yet. But this is an example of a JavaScript comment. */
-}
-     
+    colorIndex = (colorIndex + 1) % colors.length;
+  });
+});

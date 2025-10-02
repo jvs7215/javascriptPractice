@@ -1,0 +1,10 @@
+body {
+    background-color: skyblue;
+    transition: background-color 0.6s ease; /* fade */
+    
+    margin: 5em;
+    }
+
+h1 {
+    text-align:center;
+}
